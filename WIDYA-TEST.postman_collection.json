@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "50e9a327-2fef-42f4-b70e-c955dbf8ea61",
+		"name": "WIDYA-TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"rizalhamdana\",\n    \"email\": \"ari.gusti12@gmail.com\",\n    \"password\": \"12345\",\n    \"gender\": \"laki-laki\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/v1/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ari.gusti12@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/v1/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFyaS5ndXN0aTEyQGdtYWlsLmNvbSIsImlkIjoiYTkzMjZlNjQtMGYwYS0xMWViLWE5MmItOGM4NTkwY2RjNjM3IiwibG9naW5fYXQiOiIyMDIwLTEwLTE2VDAxOjQwOjMxKzA3OjAwIiwicGFzcyI6IiQyYSQxNCQvZ1lkRThuWHFtRk0zWjVZTFhCOE5lTU9XQVZ4cXJja3lNbU5GdHJkSm9nSUpzVTRHcUZmbSJ9.OC_-TddvNVrGYrhBK3fVPllLQHKwL5kV8SwAPNCa9NU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/v1/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
